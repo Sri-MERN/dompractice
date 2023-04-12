@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Form Example</title>
+</head>
+<body>
+
+  <form id="myForm">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName"><br>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName"><br>
+
+    <label for="address">Address:</label>
+    <textarea id="address" name="address"></textarea><br>
+
+    <button id="submitBtn" type="submit">Submit</button>
+  </form>
+
+  <script>
+    // Get form and button elements
+    const form = document.getElementById('myForm');
+    const submitBtn = document.getElementById('submitBtn');
+
+    // Add click event listener to button
+    submitBtn.addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent default form submission behavior
+
+      // Get form field values
+      const firstName = document.getElementById('firstName').value;
+      const lastName = document.getElementById('lastName').value;
+      const address = document.getElementById('address').value;
+
+      // Do something with form data (e.g. submit to server via AJAX)
+      console.log(`First Name: ${firstName}`);
+      console.log(`Last Name: ${lastName}`);
+      console.log(`Address: ${address}`);
+
+      // Clear form fields
+      document.getElementById('firstName').value = '';
+      document.getElementById('lastName').value = '';
+      document.getElementById('address').value = '';
+    });
+  </script>
+  <style>
+    *{
+        background-color: lightgreen;
+    }
+  </style>
+
+</body>
+</html>
